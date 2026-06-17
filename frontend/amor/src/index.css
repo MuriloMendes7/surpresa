@@ -1,0 +1,25 @@
+:root {
+  --bg-color: #050505;
+  --text-color: #ff3333; /* Vermelho vibrante para o texto */
+  --accent-color: #ff0000;
+  --polaroid-bg: #fdfdfd;
+  --font-main: 'Arial', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+#root {
+  width: 100%;
+}
