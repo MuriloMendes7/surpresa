@@ -72,6 +72,16 @@
   filter: sepia(0.2) contrast(1.1);
 }
 
+.polaroid-hint {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.7rem;
+  color: #888;
+  text-align: center;
+  margin-top: 15px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
 .content {
   margin-top: 40px;
   max-width: 500px;

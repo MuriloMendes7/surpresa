@@ -83,7 +83,7 @@ function App() {
       />
 
       <section className="footer">
-        <h2>Amo você princesa! vc vai estar pra sempre no meu coração.</h2>
+        <h2>Amo você princesa!</h2>
         <p className="sub-footer">ainda sou apaixonado nos seus olhinhos</p>
       </section>
     </div>
@@ -114,6 +114,7 @@ function MemoryItem({ memory }) {
     >
       <div className="polaroid">
         <img src={memory.image} alt="Nossa memória" className="polaroid-img" />
+        <p className="polaroid-hint">clique ou toque na foto e aumente o volume...</p>
       </div>
       <div className="content">
         <p className="memory-text">{memory.text}</p>
