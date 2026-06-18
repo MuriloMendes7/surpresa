@@ -36,16 +36,28 @@ function App() {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!hasInteracted) {
-        setHasInteracted(true);
-        if (audioRef.current) {
-          audioRef.current.play().catch(err => console.log("Autoplay bloqueado", err));
-        }
+    const startAudio = () => {
+      if (!hasInteracted && audioRef.current) {
+        audioRef.current.play()
+          .then(() => {
+            setHasInteracted(true);
+            removeListeners();
+          })
+          .catch(err => console.log("Aguardando interação válida...", err));
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const removeListeners = () => {
+      window.removeEventListener('scroll', startAudio);
+      window.removeEventListener('click', startAudio);
+      window.removeEventListener('touchstart', startAudio);
+    };
+
+    window.addEventListener('scroll', startAudio);
+    window.addEventListener('click', startAudio);
+    window.addEventListener('touchstart', startAudio);
+
+    return () => removeListeners();
   }, [hasInteracted]);
 
   return (
