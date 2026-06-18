@@ -70,8 +70,8 @@ function App() {
       />
 
       <section className="hero">
-        <h1 className="fade-in">fiz uma coisa pra vc...</h1>
-        <p className="fade-in delay">desce a página...</p>
+        <h1 className="fade-in">fiz um site pra vc!</h1>
+        <p className="fade-in delay">desce a página, tem uma coisa depois do video no final...</p>
       </section>
 
       {MEMORIES.map((memory) => (
@@ -82,11 +82,64 @@ function App() {
         videoSrc={romanticVideo} 
       />
 
+      <LetterSection />
+
       <section className="footer">
         <h2>Amo você princesa!</h2>
         <p className="sub-footer">ainda sou apaixonado nos seus olhinhos</p>
       </section>
     </div>
+  );
+}
+
+function LetterSection() {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      { threshold: 0.3 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section 
+      ref={sectionRef} 
+      className={`letter-section ${isVisible ? 'visible' : ''}`}
+    >
+      <div className="letter-paper">
+        <div className="letter-content">
+          <p className="letter-text">
+            Primeiro d tudo queria pedir perdao, pq nao valorizei seu amor, seu cuidado e sua persistência por nós, e por tudo oq rolou pós término, queria mesmo apagar tudo oq rolou
+            <br /><br />
+            Queria dizer que você foi a melhor pessoa que eu ja conheci na minha vida, a mais amorosa, carinhosa, inteligente e linda, uma mulher extremamente abençoada por Deus, que eu amo desde o dia que eu conheci
+            <br /><br />
+            Tudo oq vivi com vc desde 31/01/2022 (qnd vc entrou na escola) foi maravilhoso, sempre me senti muito amado e cuidado com vc
+            <br /><br />
+            Quero agradecer por tudo oq vc ja fez por nós, mesmo nos seus momentos mais difíceis vc colocou nosso relacionamento como prioridade
+            <br /><br />
+            Eu sei que sou insistente grudento e chato, mas tudo isso é pq eu quero vc, e sempre foi vc, desculpa nao respeitar o tempo que vc pediu, so nao quero perder vc tao facil, pq da mesma forma q vc nao desistiu d mim eu nao quero desistir d vc.
+            <br /><br />
+            Vc ta nas minhas orações de todos os dias, penso em vc desde q acordo e ate a hora q vou dormir, e em tudo oq a gnt ja viveu
+            <br /><br />
+            Sinto saudade da sua risada, do seu cheirinho, do seu abraço, e o principal, dos seus olhinhos que é a minha parte preferida em vc, que eu quero q meus filhos tenham os mesmos olhinhos q vc, saudade de ser seu namorado…
+            <br /><br />
+            Sei que no momento vc ta extremamente chateada, e nao quer olhar na minha cara, mas, queria muito um voto d confiança seu pra te fazer a mulher mais feliz do mundo de novo
+            <br /><br />
+            Eu amo você larissa, amo do fundo do meu coração.
+            <br /><br />
+            vou deixar vc em paz um pouco eu prometo, mas não esquece da gente… 
+            <br /><br />
+            Fica com Deus lari mendes! Vc sempre vai ser o meu sonho💘
+          </p>
+        </div>
+      </div>
+    </section>
   );
 }
 
