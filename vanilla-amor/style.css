@@ -168,6 +168,16 @@ body {
     opacity: 0.8;
 }
 
+.note-text {
+    color: #ff3333;
+    font-size: 0.85rem;
+    text-align: center;
+    margin: 10px 0;
+    width: 100%;
+    font-style: italic;
+    opacity: 0.9;
+}
+
 /* Animações */
 .fade-in {
     animation: fadeIn 2s forwards;

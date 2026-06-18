@@ -82,6 +82,8 @@ function App() {
         videoSrc={romanticVideo} 
       />
 
+      <p className="note-text">escrevi isso pra vc</p>
+
       <LetterSection />
 
       <section className="footer">
