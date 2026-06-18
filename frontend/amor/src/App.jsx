@@ -15,6 +15,7 @@ import photo10 from './assets/photos/WhatsApp Image 2026-06-17 at 19.13.23 (8).j
 
 // Importando o vídeo real
 import romanticVideo from './assets/video/WhatsApp Video 2026-06-17 at 19.13.24.mp4';
+import romanticAudio from './assets/audio/shot-for-me.mp3';
 
 // Dados das Memórias
 const MEMORIES = [
@@ -49,11 +50,11 @@ function App() {
 
   return (
     <div className="container">
-      {/* Audio Element - Certifique-se de colocar o mp3 em src/assets/audio/shot-for-me.mp3 */}
+      {/* Audio Element */}
       <audio 
         ref={audioRef} 
         loop 
-        src="/src/assets/audio/shot-for-me.mp3" 
+        src={romanticAudio} 
       />
 
       <section className="hero">
